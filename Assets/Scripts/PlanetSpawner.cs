@@ -12,6 +12,7 @@ public class PlanetSpawner
         {
             var planetOrbit = PlanetOrbit.Instantiate(planetSettings.planetOrbit);
             planetOrbit.name = planetSettings.planetOrbit.name;
+            NetworkServer.Spawn(planetOrbit.gameObject);
             planetOrbit.Init(planetSettings.radius);
         }
     }

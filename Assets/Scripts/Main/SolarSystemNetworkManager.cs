@@ -5,11 +5,15 @@ using Mirror;
 using UnityEngine.UI;
 using TMPro;
 using Data;
+using System;
 
 namespace Main
 {
     public class SolarSystemNetworkManager : NetworkManager
     {
+        public event Action OnServerStart;
+        public event Action OnClientStart;
+
         [SerializeField] private TMP_InputField _inputName;
         public Dictionary<int, ShipController> _players = new Dictionary<int, ShipController>();
         private SpaceShipSettings _spaceShipSettings;
@@ -73,6 +77,15 @@ namespace Main
             base.OnClientConnect(conn);
         }*/
 
+        public override void OnStartServer()
+        {
+            base.OnStartServer();
+
+            OnServerStart?.Invoke();
+
+            if (_inputName != null)
+                _inputName.gameObject.SetActive(false);
+        }
         public override void OnStopServer()
         {
             base.OnStopServer();
@@ -84,6 +97,8 @@ namespace Main
         public override void OnStartClient()
         {
             base.OnStartClient();
+
+            OnClientStart?.Invoke();
 
             if (_inputName != null)
                 _inputName.gameObject.SetActive(false);

@@ -1,11 +1,10 @@
-using Network;
 using UnityEngine;
 using Mirror;
 using UI;
 
-public class PlanetOrbit : NetworkMovableObject
+public class PlanetOrbit: NetworkBehaviour
 {
-    protected override float speed => smoothTime;
+    private float speed => smoothTime;
 
     [SerializeField] private Vector3 aroundPoint;
     [SerializeField] private float smoothTime = .3f;
@@ -19,6 +18,9 @@ public class PlanetOrbit : NetworkMovableObject
 
     [SerializeField] private ObjectLabel planetLabel;
 
+    [SyncVar] protected Vector3 serverPosition;
+    [SyncVar] protected Vector3 serverEulers;
+
     private float currentAng;
     private Vector3 currentPositionSmoothVelocity;
     private float currentRotationAngle;
@@ -28,14 +30,31 @@ public class PlanetOrbit : NetworkMovableObject
     public void Init(float radius)
     {
         this.radius = radius;
-        Initiate(UpdatePhase.FixedUpdate);
     }
 
     private void OnGUI()
     {
         planetLabel?.DrawLabel();
     }
-    protected override void HasAuthorityMovement()
+
+    private void FixedUpdate()
+    {
+        Movement();
+    }
+
+    private void Movement()
+    {
+        if (isServer)
+        {
+            ServerMovement();
+        }
+        else
+        {
+            ClientMovement();
+        }
+    }
+
+    private void ServerMovement()
     {
         if (!isServer)
             return;
@@ -55,13 +74,13 @@ public class PlanetOrbit : NetworkMovableObject
         SendToClients();
     }
 
-    protected override void SendToClients()
+    private void SendToClients()
     {
         serverPosition = transform.position;
         serverEulers = transform.eulerAngles;
     }
 
-    protected override void FromOwnerUpdate()
+    private void ClientMovement()
     {
         if (!isClient)
             return;

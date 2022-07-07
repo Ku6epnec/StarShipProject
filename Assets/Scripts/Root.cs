@@ -22,6 +22,11 @@ public class Root : MonoBehaviour
         NetworkManager.RegisterStartPosition(spawnPoint);
 
         networkManager.Init(Instantiate(spaceShipSettings));
+        networkManager.OnServerStart += SpawnPlanets;
+    }
+
+    private void SpawnPlanets()
+    {
         PlanetSpawner.Spawn(Instantiate(planetSpawnSettings));
     }
 }
