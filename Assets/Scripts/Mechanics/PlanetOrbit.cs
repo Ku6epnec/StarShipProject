@@ -16,6 +16,10 @@ public class PlanetOrbit: NetworkBehaviour
 
     [SerializeField] float radius;
 
+    [SerializeField] GameObject planetRing;
+
+    private float radiusRing = 0.0f;
+
     [SerializeField] private ObjectLabel planetLabel;
 
     [SyncVar] protected Vector3 serverPosition;
@@ -27,9 +31,19 @@ public class PlanetOrbit: NetworkBehaviour
 
     private const float circleRadians = Mathf.PI * 2;
 
-    public void Init(float radius)
+    public void Init(PlanetData planetData)
     {
-        this.radius = radius;
+        this.radius = planetData.radius;
+        this.radiusRing = planetData.radiusRing;
+        if (this.radiusRing != 0)
+        {
+            var ring = Instantiate(planetRing, transform);
+            ring.transform.localScale = new Vector3(radiusRing, radiusRing, radiusRing);
+        }
+        var meshRenderer = GetComponent<MeshRenderer>();
+        MaterialPropertyBlock materialPropertyBlock = new MaterialPropertyBlock();
+        materialPropertyBlock.SetColor("_Color", planetData.groundColor);
+        meshRenderer.SetPropertyBlock(materialPropertyBlock);
     }
 
     private void OnGUI()

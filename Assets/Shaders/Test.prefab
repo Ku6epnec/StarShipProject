@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &155515399679635778
+--- !u!1 &6708720114070357044
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 155515399679635788}
-  - component: {fileID: 155515399679635791}
-  - component: {fileID: 155515399679635790}
-  - component: {fileID: 155515399679635777}
-  - component: {fileID: 155515399679635776}
-  - component: {fileID: 155515399679635789}
-  - component: {fileID: 155515399679635787}
-  - component: {fileID: -1865974120919145510}
+  - component: {fileID: 6708720114070357042}
+  - component: {fileID: 6708720114070357041}
+  - component: {fileID: 6708720114070357040}
+  - component: {fileID: 6708720114070357047}
+  - component: {fileID: 6708720114070357046}
+  - component: {fileID: 6708720114070357043}
+  - component: {fileID: 6708720114070357053}
+  - component: {fileID: 3332219014369227696}
+  - component: {fileID: -3827536604079756749}
   m_Layer: 6
-  m_Name: Saturn
+  m_Name: Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &155515399679635788
+--- !u!4 &6708720114070357042
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155515399679635778}
+  m_GameObject: {fileID: 6708720114070357044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -281, y: 0, z: 754}
-  m_LocalScale: {x: 26, y: 26, z: 26}
+  m_LocalPosition: {x: 54, y: 0, z: 317}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &155515399679635791
+--- !u!33 &6708720114070357041
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155515399679635778}
+  m_GameObject: {fileID: 6708720114070357044}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &155515399679635790
+--- !u!23 &6708720114070357040
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155515399679635778}
+  m_GameObject: {fileID: 6708720114070357044}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a85a1d1bef60c8f4cbd9d3bb683068d2, type: 2}
+  - {fileID: 2100000, guid: 8c96562b2e3b7b9499cb00db5528381e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,26 +87,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &155515399679635777
+--- !u!135 &6708720114070357047
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155515399679635778}
+  m_GameObject: {fileID: 6708720114070357044}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &155515399679635776
+--- !u!114 &6708720114070357046
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155515399679635778}
+  m_GameObject: {fileID: 6708720114070357044}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b10964541646eb3449bff403ebf87051, type: 3}
@@ -115,20 +116,19 @@ MonoBehaviour:
   syncInterval: 0.1
   aroundPoint: {x: 0, y: 0, z: 0}
   smoothTime: 0.3
-  circleInSecond: 0.003
+  circleInSecond: 0.002
   offsetSin: 1
   offsetCos: 1
-  rotationSpeed: 12
-  radius: 600
-  planetRing: {fileID: 4966851152228968958, guid: 39d94e28ca1e10c4c9c53ab02b4349c4, type: 3}
-  planetLabel: {fileID: -1865974120919145510}
---- !u!54 &155515399679635789
+  rotationSpeed: 8
+  radius: 300
+  planetLabel: {fileID: 3332219014369227696}
+--- !u!54 &6708720114070357043
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155515399679635778}
+  m_GameObject: {fileID: 6708720114070357044}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -138,13 +138,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &155515399679635787
+--- !u!114 &6708720114070357053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155515399679635778}
+  m_GameObject: {fileID: 6708720114070357044}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
@@ -153,17 +153,31 @@ MonoBehaviour:
   sceneId: 0
   serverOnly: 0
   visible: 0
-  m_AssetId: f1b69c3de4744254190f9f9158412a0f
+  m_AssetId: ab1438e29d062c946b4a0e358d84b1a9
   hasSpawned: 0
---- !u!114 &-1865974120919145510
+--- !u!114 &3332219014369227696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155515399679635778}
+  m_GameObject: {fileID: 6708720114070357044}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d969544ce470bef419d2a1352f4ccf44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3827536604079756749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6708720114070357044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5897b167fe40f4daebc0f52360f5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlowColor: {r: 0.9550766, g: 0.9622642, b: 0.30320394, a: 1}
+  LerpFactor: 10

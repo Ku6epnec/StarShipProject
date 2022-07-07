@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Mirror;
 
 public class PlanetSpawner
@@ -13,7 +10,7 @@ public class PlanetSpawner
             var planetOrbit = PlanetOrbit.Instantiate(planetSettings.planetOrbit);
             planetOrbit.name = planetSettings.planetOrbit.name;
             NetworkServer.Spawn(planetOrbit.gameObject);
-            planetOrbit.Init(planetSettings.radius);
+            planetOrbit.Init(planetSettings);
         }
     }
 }

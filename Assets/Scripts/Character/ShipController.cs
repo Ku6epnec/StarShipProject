@@ -45,6 +45,13 @@ namespace Characters
             _cameraOrbit.ShowPlayerLabels(playerLabel);
         }
 
+        private void Awake()
+        {
+            var collider = GetComponent<Collider>();
+            if (collider != null)
+                collider.enabled = false;
+        }
+
         [Server]
         public void Init(SpaceShipSettings spaceShipSettings)
         {
@@ -63,28 +70,45 @@ namespace Characters
 
         public override void OnStartAuthority()
         {
+            base.OnStartAuthority();
+
+            var collider = GetComponent<Collider>();
+            if (collider != null)
+                collider.enabled = true;
+
             _rigidbody = GetComponent<Rigidbody>();
             if (_rigidbody == null)            
                 return;
 
             var networkManager = (SolarSystemNetworkManager)SolarSystemNetworkManager.singleton;
             gameObject.name = networkManager.playerName;
-            //gameObject.name = PlayerName;
             _cameraOrbit = FindObjectOfType<CameraOrbit>();
             _cameraOrbit.Initiate(_cameraAttach == null ? transform : _cameraAttach);
             playerLabel = GetComponentInChildren<PlayerLabel>();
-            base.OnStartAuthority();
+            
         }
 
         protected override void HasAuthorityMovement()
         {
-            //var spaceShipSettings = SettingsContainer.Instance?.SpaceShipSettings;
+            _spaceShipSettings = SettingsContainer.Instance?.SpaceShipSettings;
+
             if (_spaceShipSettings == null)            
-                return;            
+                return;         
 
             var isFaster = Input.GetKey(KeyCode.LeftShift);
             var speed = _spaceShipSettings.shipSpeed;
             var faster = isFaster ? _spaceShipSettings.faster : 1.0f;
+
+            var raduisSpawnStars = _spaceShipSettings.raduisSpawnStars;
+            var starObject = _spaceShipSettings.Star;
+
+            var timeDestroy = _spaceShipSettings.TimeDestroyStars;
+            var position = transform.position;
+            var newStar = Instantiate(starObject, new Vector3(UnityEngine.Random.Range(position.x - raduisSpawnStars, position.x + raduisSpawnStars), 
+                UnityEngine.Random.Range(position.y - raduisSpawnStars, position.y + raduisSpawnStars),
+                UnityEngine.Random.Range(position.z - raduisSpawnStars, position.z + raduisSpawnStars)),
+                transform.rotation);
+            Destroy(newStar, timeDestroy);
 
             _shipSpeed = Mathf.Lerp(_shipSpeed, speed * faster, _spaceShipSettings.acceleration);
 

@@ -15,19 +15,37 @@ MonoBehaviour:
   Planets:
   - planetOrbit: {fileID: 6708720114070357046, guid: c461dab61d0e78740a135148dff57fbc, type: 3}
     radius: 100
+    groundColor: {r: 0.41628358, g: 1, b: 0.135849, a: 1}
+    radiusRing: 0
   - planetOrbit: {fileID: 2159390517216399410, guid: 02217303ecac3c04fb84db7a6533fbfc, type: 3}
     radius: 200
+    groundColor: {r: 0.8427082, g: 0.8666667, b: 0.09411764, a: 1}
+    radiusRing: 2.04
   - planetOrbit: {fileID: 5477853962783499798, guid: 0ff830cc4030e674385cb81e4a417ddc, type: 3}
     radius: 300
+    groundColor: {r: 1, g: 0.111712284, b: 0, a: 1}
+    radiusRing: 0
   - planetOrbit: {fileID: 3242663076738392921, guid: 3b7d34ae456eaf3489fae047b2bc2528, type: 3}
     radius: 400
+    groundColor: {r: 0.6415094, g: 0.6015664, b: 0.6015664, a: 1}
+    radiusRing: 0
   - planetOrbit: {fileID: 7011484644782264121, guid: 5502213ea9b0e514290ad53edf022454, type: 3}
     radius: 500
+    groundColor: {r: 0.107547104, g: 0.7064158, b: 1, a: 1}
+    radiusRing: 1.75
   - planetOrbit: {fileID: 155515399679635776, guid: f1b69c3de4744254190f9f9158412a0f, type: 3}
     radius: 600
+    groundColor: {r: 0.89709127, g: 1, b: 0, a: 1}
+    radiusRing: 1
   - planetOrbit: {fileID: 3326509750437159719, guid: eed700aa132152a40ac5bae4b5182f63, type: 3}
     radius: 700
+    groundColor: {r: 0.60754716, g: 0.93707865, b: 1, a: 1}
+    radiusRing: 1.46
   - planetOrbit: {fileID: 8515252044354492318, guid: d1870217b71d0084badf387a367aada9, type: 3}
     radius: 800
+    groundColor: {r: 0.9982879, g: 1, b: 0.38113207, a: 1}
+    radiusRing: 0
   - planetOrbit: {fileID: 1662678333470386443, guid: 040af637d68c76a4fb313012069fbcc2, type: 3}
     radius: 0
+    groundColor: {r: 0.9191468, g: 1, b: 0, a: 1}
+    radiusRing: 0

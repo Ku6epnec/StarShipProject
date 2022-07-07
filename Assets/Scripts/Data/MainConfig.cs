@@ -14,4 +14,8 @@ public class PlanetData
 {
     public PlanetOrbit planetOrbit;
     public int radius;
+
+    public Color groundColor;
+
+    [Range(0.0f, 5.0f)] public float radiusRing;
 }

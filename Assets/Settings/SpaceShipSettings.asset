@@ -18,3 +18,5 @@ MonoBehaviour:
   normalFov: 75
   fasterFov: 90
   changeFovSpeed: 1
+  raduisSpawnStars: 100
+  Star: {fileID: 6683648093767627824, guid: 96c5d973ef434254a83fa2c175d003aa, type: 3}

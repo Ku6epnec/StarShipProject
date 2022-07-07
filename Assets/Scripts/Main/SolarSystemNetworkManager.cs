@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using Characters;
 using UnityEngine;
 using Mirror;
-using UnityEngine.UI;
 using TMPro;
 using Data;
 using System;
@@ -35,15 +34,10 @@ namespace Main
             GameObject player = startPos != null
                 ? Instantiate(playerPrefab, startPos.position, startPos.rotation)
                 : Instantiate(playerPrefab);
-
-            //player.name = _inputName.text;// $"{playerPrefab.name} [connID={conn.connectionId}]";
-            //var spawnTransform = GetStartPosition();
             
             ShipController shipController = player.GetComponent<ShipController>();
             shipController.Init(_spaceShipSettings);
-            //var player = Instantiate(playerPrefab, spawnTransform.position, spawnTransform.rotation);
             _players.Add(conn.connectionId, shipController);
-            //shipController.OnCollidedWithSomething += OnShipCollidedWithSomething;
 
             NetworkServer.AddPlayerForConnection(conn, player);
 

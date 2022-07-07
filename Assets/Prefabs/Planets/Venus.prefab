@@ -120,6 +120,7 @@ MonoBehaviour:
   offsetCos: 1
   rotationSpeed: 5
   radius: 200
+  planetRing: {fileID: 4966851152228968958, guid: 39d94e28ca1e10c4c9c53ab02b4349c4, type: 3}
   planetLabel: {fileID: -3538452089169395039}
 --- !u!54 &8515252044354492307
 Rigidbody:
